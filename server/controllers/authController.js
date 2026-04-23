@@ -10,9 +10,16 @@ const generateToken = (id) =>
 const register = async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
+
     const user = await User.create({ username, email, password });
+
+    user.password = undefined; // remove hashed password
+
     res.status(201).json({ token: generateToken(user._id), user });
   } catch (err) {
+    if (err.code === 11000) {
+      return res.status(400).json({ message: 'Email or username already exists' });
+    }
     next(err);
   }
 };
@@ -21,10 +28,15 @@ const register = async (req, res, next) => {
 const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
+
     const user = await User.findOne({ email }).select('+password');
+
     if (!user || !(await user.matchPassword(password))) {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
+
+    user.password = undefined; // remove hashed password
+
     res.json({ token: generateToken(user._id), user });
   } catch (err) {
     next(err);
