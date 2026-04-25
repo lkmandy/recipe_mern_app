@@ -6,6 +6,18 @@ const validate = require('../middleware/validate');
 
 const router = express.Router();
 
+router.get('/me', protect, async (req, res) => {
+  res.json({
+    _id: req.user._id,
+    username: req.user.username,
+    email: req.user.email,
+    bio: req.user.bio,
+    avatarUrl: req.user.avatarUrl,
+    createdAt: req.user.createdAt,
+    updatedAt: req.user.updatedAt
+  });
+});
+
 router.get('/:id', getUserProfile);
 
 router.put(

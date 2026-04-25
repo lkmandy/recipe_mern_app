@@ -16,12 +16,18 @@ const getUserProfile = async (req, res, next) => {
 // ------PUT /api/users/me------
 const updateProfile = async (req, res, next) => {
   try {
-    const { username, bio, avatarUrl } = req.body;
+    const updates = {};
+
+    if (req.body.username !== undefined) updates.username = req.body.username;
+    if (req.body.bio !== undefined) updates.bio = req.body.bio;
+    if (req.body.avatarUrl !== undefined) updates.avatarUrl = req.body.avatarUrl;
+
     const user = await User.findByIdAndUpdate(
       req.user._id,
-      { username, bio, avatarUrl },
+      updates,
       { new: true, runValidators: true }
-    );
+    ).select('-password');
+
     res.json(user);
   } catch (err) {
     next(err);
