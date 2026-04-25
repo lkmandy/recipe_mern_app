@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-// Requires a valid JWT — rejects if missing or invalid
+// ------Requires a valid JWT — rejects if missing or invalid------
 const protect = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader?.startsWith('Bearer ')) {

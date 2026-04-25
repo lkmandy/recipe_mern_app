@@ -1,7 +1,7 @@
 const Favorite = require('../models/Favorite');
 const Recipe   = require('../models/Recipe');
 
-// GET /api/favorites
+// ------GET /api/favorites ------
 const getFavorites = async (req, res, next) => {
   try {
     const favorites = await Favorite.find({ user: req.user._id }).populate({
@@ -14,7 +14,7 @@ const getFavorites = async (req, res, next) => {
   }
 };
 
-// POST /api/favorites/:recipeId  — toggles save/unsave
+// ------POST /api/favorites/:recipeId  — toggles save/unsave ------
 const toggleFavorite = async (req, res, next) => {
   try {
     const recipe = await Recipe.findById(req.params.recipeId);
@@ -32,7 +32,7 @@ const toggleFavorite = async (req, res, next) => {
   }
 };
 
-// GET /api/favorites/:recipeId/status
+// ------GET /api/favorites/:recipeId/status ------
 const getFavoriteStatus = async (req, res, next) => {
   try {
     const exists = await Favorite.exists({ user: req.user._id, recipe: req.params.recipeId });

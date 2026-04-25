@@ -8,7 +8,7 @@ const favoriteSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Compound unique index — one save per user per recipe
+// ------Compound unique index — one save per user per recipe------
 favoriteSchema.index({ user: 1, recipe: 1 }, { unique: true });
 
 module.exports = mongoose.model('Favorite', favoriteSchema);

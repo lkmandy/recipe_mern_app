@@ -1,7 +1,7 @@
 const User   = require('../models/User');
 const Recipe = require('../models/Recipe');
 
-// GET /api/users/:id
+// ------GET /api/users/:id------
 const getUserProfile = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.id).select('-password');
@@ -13,7 +13,7 @@ const getUserProfile = async (req, res, next) => {
   }
 };
 
-// PUT /api/users/me
+// ------PUT /api/users/me------
 const updateProfile = async (req, res, next) => {
   try {
     const { username, bio, avatarUrl } = req.body;

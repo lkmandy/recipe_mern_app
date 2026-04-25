@@ -1,7 +1,7 @@
 const Recipe   = require('../models/Recipe');
 const Favorite = require('../models/Favorite');
 
-// GET /api/recipes?search=&category=&area=&difficulty=&sort=&page=&limit=
+// ------GET /api/recipes?search=&category=&area=&difficulty=&sort=&page=&limit= ------
 const getRecipes = async (req, res, next) => {
   try {
     const { search, category, area, difficulty, sort = 'newest', page = 1, limit = 12 } = req.query;

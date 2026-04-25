@@ -31,7 +31,7 @@ const login = async (req, res, next) => {
   }
 };
 
-// GET /api/auth/me
+// ------GET /api/auth/me ------
 const getMe = (req, res) => res.json(req.user);
 
 module.exports = { register, login, getMe };

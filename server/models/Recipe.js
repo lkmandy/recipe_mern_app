@@ -63,7 +63,7 @@ const recipeSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Full-text search index on title, description, and tags
+// ------Full-text search index on title, description, and tags------
 recipeSchema.index({ title: 'text', description: 'text', tags: 'text' });
 
 module.exports = mongoose.model('Recipe', recipeSchema);
