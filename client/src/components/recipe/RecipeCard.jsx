@@ -15,7 +15,7 @@ export default function RecipeCard({ recipe, isSaved, onToggleSave }) {
       to={`/recipes/${recipe._id}`}
       bg="white"
       borderRadius="lg"
-      border="1px"
+      border="1px solid"
       borderColor="gray.200"
       overflow="hidden"
       display="block"

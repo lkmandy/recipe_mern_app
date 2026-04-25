@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ProfileSkeleton from '../components/profile/ProfileSkeleton';
 import {
   Box, Heading, Text, Avatar, Flex, Button, FormControl,
   FormLabel, Input, Textarea, VStack, Divider, useToast,
@@ -52,7 +53,7 @@ export default function ProfilePage() {
     }
   };
 
-  if (loading) return <Spinner />;
+  if (loading) return <ProfileSkeleton />;
   if (error)   return <Box maxW="600px" mx="auto" mt={10}><ErrorAlert message={error} /></Box>;
 
   return (
@@ -120,7 +121,7 @@ export default function ProfilePage() {
       <Heading size="md" mb={6}>
         {isOwner ? 'My recipes' : `Recipes by @${profile.username}`}
       </Heading>
-      <RecipeGrid recipes={recipes} />
+      <RecipeGrid recipes={recipes} loading={loading} />
     </Box>
   );
 }

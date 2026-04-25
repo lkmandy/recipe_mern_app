@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import RecipeDetailSkeleton from '../components/recipe/RecipeDetailSkeleton';
 import {
   Box, Heading, Text, Image, Badge, Button, Flex, SimpleGrid,
   UnorderedList, ListItem, Divider, useToast,
@@ -63,7 +64,7 @@ export default function RecipeDetailPage() {
     }
   };
 
-  if (loading) return <Spinner />;
+  if (loading) return <RecipeDetailSkeleton />;
   if (error)   return <Box maxW="600px" mx="auto" mt={10}><ErrorAlert message={error} /></Box>;
 
   const isAuthor = user && recipe.author?._id === user._id;

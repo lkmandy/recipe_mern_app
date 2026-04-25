@@ -110,7 +110,7 @@ export default function RecipesPage() {
 
       {loading && <Spinner />}
       {error   && <ErrorAlert message={error} />}
-      {!loading && !error && <RecipeGrid recipes={recipes} />}
+      {!loading && !error && <RecipeGrid recipes={recipes} loading={loading} />}
 
       {/* Pagination */}
       {pages > 1 && (
