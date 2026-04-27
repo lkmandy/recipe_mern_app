@@ -1,3 +1,4 @@
+// Favorites routes. All endpoints require authentication — a user can only manage their own saved recipes.
 const express = require('express');
 const { getFavorites, toggleFavorite, getFavoriteStatus } = require('../controllers/favoriteController');
 const { protect } = require('../middleware/authMiddleware');

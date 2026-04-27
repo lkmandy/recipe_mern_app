@@ -1,3 +1,4 @@
+// Establishes the connection to MongoDB using Mongoose. Exits the process if the connection fails on startup.
 const mongoose = require('mongoose');
 
 const connectDB = async () => {

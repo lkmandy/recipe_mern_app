@@ -1,3 +1,5 @@
+// Displays a single recipe as a clickable card. The save button stops click propagation
+// so it doesn't trigger the card's navigation link at the same time.
 import { Link } from 'react-router-dom';
 import {
   Box, Image, Text, Badge, Flex, IconButton, Heading, Tooltip,
@@ -33,7 +35,7 @@ export default function RecipeCard({ recipe, isSaved, onToggleSave }) {
           bg="gray.100"
         />
 
-        {/* Save button — stops link propagation */}
+        {/* Save button   stops link propagation */}
         {user && (
           <Tooltip label={isSaved ? 'Remove from saved' : 'Save recipe'} placement="top">
             <IconButton
@@ -60,9 +62,10 @@ export default function RecipeCard({ recipe, isSaved, onToggleSave }) {
           bottom={2}
           left={2}
           colorScheme="orange"
-          fontSize="xs"
+          fontSize="10px"
+          textTransform="none"
         >
-          {recipe.category}
+          {recipe.category?.charAt(0).toUpperCase() + recipe.category?.slice(1).toLowerCase()}
         </Badge>
       </Box>
 
@@ -86,9 +89,10 @@ export default function RecipeCard({ recipe, isSaved, onToggleSave }) {
               recipe.difficulty === 'Hard' ? 'red' : 'yellow'
             }
             variant="subtle"
-            fontSize="xs"
+            fontSize="10px"
+            textTransform="none"
           >
-            {recipe.difficulty}
+            {recipe.difficulty?.charAt(0).toUpperCase() + recipe.difficulty?.slice(1).toLowerCase()}
           </Badge>
         </Flex>
 

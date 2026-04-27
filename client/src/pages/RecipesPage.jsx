@@ -1,3 +1,5 @@
+// Browseable, filterable recipe listing page.
+// Filter state is kept in the URL query string so users can share or bookmark a filtered view.
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import {
@@ -9,10 +11,12 @@ import Spinner from '../components/ui/Spinner';
 import ErrorAlert from '../components/ui/ErrorAlert';
 import useRecipes from '../hooks/useRecipes';
 
-const CATEGORIES = [
-  '', 'Beef','Chicken','Dessert','Lamb','Miscellaneous',
-  'Pasta','Pork','Seafood','Side','Starter',
-  'Vegan','Vegetarian','Breakfast','Goat',
+const CATS = [
+  'Beef', 'Chicken', 'Seafood',
+  'Vegan', 'Vegetarian', 'Pasta',
+  'Soup', 'Side', 'Starter',
+  'Breakfast', 'Dessert',
+  'Lunch', 'Dinner', 'Drinks',
 ];
 
 export default function RecipesPage() {
@@ -66,7 +70,7 @@ export default function RecipesPage() {
           bg="white"
         >
           <option value="">All categories</option>
-          {CATEGORIES.filter(Boolean).map((c) => (
+          {CATS.filter(Boolean).map((c) => (
             <option key={c} value={c}>{c}</option>
           ))}
         </Select>

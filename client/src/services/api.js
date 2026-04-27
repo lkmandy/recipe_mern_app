@@ -1,3 +1,5 @@
+// Pre-configured Axios instance used by all service modules.
+// Automatically attaches the stored JWT to every request and removes it from storage when the server returns 401 Unauthorized.
 import axios from 'axios';
 
 const api = axios.create({
@@ -12,7 +14,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Clear token on 401 — user will be redirected by ProtectedRoute
+// Clear token on 401   user will be redirected by ProtectedRoute
 api.interceptors.response.use(
   (res) => res,
   (err) => {

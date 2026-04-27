@@ -1,3 +1,5 @@
+// Handles reading and updating user profiles.
+// A profile response includes both the user document and all recipes they have authored.
 const User   = require('../models/User');
 const Recipe = require('../models/Recipe');
 

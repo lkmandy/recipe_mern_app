@@ -1,3 +1,5 @@
+// User profile page. When accessed via /users/:id it shows any user's public profile.
+// When accessed via /profile (no id param) it shows the logged-in user's own profile with an inline edit form.
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {

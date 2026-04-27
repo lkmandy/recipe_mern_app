@@ -1,3 +1,5 @@
+// Mongoose schema and model for a registered user.
+// Passwords are hashed with bcrypt before being saved to the database.
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
@@ -45,7 +47,7 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-// Instance method — compare entered password with stored hash
+// Instance method   compare entered password with stored hash
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return bcrypt.compare(enteredPassword, this.password);
 };

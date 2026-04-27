@@ -1,3 +1,5 @@
+// Renders a responsive grid of RecipeCard components.
+// Handles the empty state so calling pages don't need their own "no results" UI.
 import { SimpleGrid, Text, Box } from '@chakra-ui/react';
 import RecipeCard from './RecipeCard';
 import useFavorites from '../../hooks/useFavorites';

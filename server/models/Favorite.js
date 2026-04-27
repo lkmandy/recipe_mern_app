@@ -1,3 +1,5 @@
+// Mongoose schema and model representing a saved (favorited) recipe for a user.
+// Acts as a join table between User and Recipe — one document per user-recipe pair.
 const mongoose = require('mongoose');
 
 const favoriteSchema = new mongoose.Schema(
@@ -8,7 +10,7 @@ const favoriteSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Compound unique index — one save per user per recipe
+// Compound unique index   one save per user per recipe
 favoriteSchema.index({ user: 1, recipe: 1 }, { unique: true });
 
 module.exports = mongoose.model('Favorite', favoriteSchema);

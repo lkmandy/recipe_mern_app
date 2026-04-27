@@ -1,3 +1,5 @@
+// Shared form component used by both CreateRecipePage and EditRecipePage.
+// Accepts initialValues for pre-filling fields when editing an existing recipe.
 import { useState } from 'react';
 import {
   Box, Button, FormControl, FormLabel, FormErrorMessage,

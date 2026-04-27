@@ -1,3 +1,4 @@
+// User routes. /me refers to the currently logged-in user; /:id is any user's public profile.
 const express = require('express');
 const { body } = require('express-validator');
 const { getUserProfile, updateProfile } = require('../controllers/userController');

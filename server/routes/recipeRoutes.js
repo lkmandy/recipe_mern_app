@@ -1,3 +1,5 @@
+// Recipe routes. Read endpoints (GET) are public; write endpoints (POST, PUT, DELETE) require authentication.
+// The recipeValidation array is shared between create and update to keep validation rules in one place.
 const express = require('express');
 const { body } = require('express-validator');
 const {

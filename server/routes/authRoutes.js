@@ -1,3 +1,5 @@
+// Auth routes: register a new account, log in, and fetch the currently authenticated user.
+// Input fields are validated with express-validator before reaching the controller.
 const express = require('express');
 const { body } = require('express-validator');
 const { register, login, getMe } = require('../controllers/authController');

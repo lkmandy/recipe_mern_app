@@ -1,3 +1,5 @@
+// Displays all recipes the logged-in user has saved (favorited).
+// Delegates data fetching to the useFavorites hook and rendering to RecipeGrid.
 import { Box, Heading, Text } from '@chakra-ui/react';
 import RecipeGrid from '../components/recipe/RecipeGrid';
 import Spinner from '../components/ui/Spinner';

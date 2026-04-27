@@ -1,3 +1,5 @@
+// Login form component. Validates fields client-side before calling the AuthContext login action,
+// which posts to the API and stores the returned JWT in localStorage.
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {

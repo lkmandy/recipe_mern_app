@@ -1,3 +1,5 @@
+// Registration form component. Validates fields client-side (including password confirmation)
+// before calling the AuthContext register action, which creates the account and logs the user in immediately.
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {
@@ -47,7 +49,7 @@ export default function RegisterForm() {
   };
 
   return (
-    <Box maxW="400px" mx="auto" mt={12} p={8} bg="white" borderRadius="lg" border="1px" borderColor="gray.200">
+    <Box maxW="400px" mx="auto" mt={12} mb={16} p={8} bg="white" borderRadius="lg" border="1px" borderColor="gray.200">
       <Heading size="lg" mb={2}>Create an account</Heading>
       <Text color="gray.500" fontSize="sm" mb={6}>Join the community and start sharing recipes</Text>
 

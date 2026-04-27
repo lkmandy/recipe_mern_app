@@ -2,7 +2,7 @@
  * Converts minutes into a readable string e.g. 90 → "1 hr 30 min"
  */
 export const formatTime = (minutes) => {
-  if (!minutes || minutes <= 0) return '—';
+  if (!minutes || minutes <= 0) return ' ';
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
   if (h === 0) return `${m} min`;

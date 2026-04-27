@@ -1,3 +1,5 @@
+// Global error-handling middleware. Express identifies it as the error handler because it takes four arguments (err, req, res, next).
+// Normalises Mongoose-specific errors into user-friendly HTTP responses.
 const errorHandler = (err, _req, res, _next) => {
   let statusCode = err.statusCode || 500;
   let message    = err.message    || 'Server error';

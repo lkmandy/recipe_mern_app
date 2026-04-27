@@ -1,3 +1,5 @@
+// React Context that holds the currently logged-in user and exposes login, register, and logout actions.
+// Wrap the app in <AuthProvider> so any component can call useAuth() to access auth state without prop drilling.
 import { createContext, useContext, useState, useEffect } from 'react';
 import api from '../services/api';
 

@@ -1,3 +1,5 @@
+// Handles user registration, login, and session retrieval.
+// On success, each auth endpoint returns a JWT (JSON Web Token) the client stores and sends with future requests.
 const jwt  = require('jsonwebtoken');
 const User = require('../models/User');
 

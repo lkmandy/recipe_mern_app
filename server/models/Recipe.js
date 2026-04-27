@@ -1,9 +1,22 @@
+// Mongoose schema and model for a recipe document.
+// Each recipe stores its ingredients as an embedded sub-document array rather than a separate collection.
 const mongoose = require('mongoose');
 
 const CATEGORIES = [
-  'Beef', 'Chicken', 'Dessert', 'Lamb', 'Miscellaneous',
-  'Pasta', 'Pork', 'Seafood', 'Side', 'Starter',
-  'Vegan', 'Vegetarian', 'Breakfast', 'Goat',
+  'Beef',
+  'Chicken',
+  'Seafood',
+  'Vegan',
+  'Vegetarian',
+  'Pasta',
+  'Soup',
+  'Side',
+  'Starter',
+  'Breakfast',
+  'Dessert',
+  'Lunch',
+  'Dinner',
+  'Drinks',
 ];
 
 const ingredientSchema = new mongoose.Schema(

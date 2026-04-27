@@ -1,3 +1,5 @@
+// CRUD handlers for recipes. All write operations (create, update, delete) require the user to be authenticated
+// and — for update/delete — to be the original author of the recipe.
 const Recipe   = require('../models/Recipe');
 const Favorite = require('../models/Favorite');
 

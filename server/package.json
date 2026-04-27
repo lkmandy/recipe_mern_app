@@ -1,7 +1,7 @@
 {
   "name": "recipe-app-server",
   "version": "1.0.0",
-  "description": "MERN Recipe Sharing App — Express/Node backend",
+  "description": "MERN Recipe Sharing App   Express/Node backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

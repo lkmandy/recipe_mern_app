@@ -1,3 +1,5 @@
+// Manages a user's saved (favorited) recipes.
+// The toggle endpoint creates a Favorite document if none exists, or deletes it if it does — acting as a save/unsave switch.
 const Favorite = require('../models/Favorite');
 const Recipe   = require('../models/Recipe');
 
@@ -14,7 +16,7 @@ const getFavorites = async (req, res, next) => {
   }
 };
 
-// POST /api/favorites/:recipeId  — toggles save/unsave
+// POST /api/favorites/:recipeId    toggles save/unsave
 const toggleFavorite = async (req, res, next) => {
   try {
     const recipe = await Recipe.findById(req.params.recipeId);
