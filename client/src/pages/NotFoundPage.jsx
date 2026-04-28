@@ -1,3 +1,4 @@
+// 404 Not Found page. Rendered by the catch-all route in App.jsx when no other route matches.
 import { Box, Heading, Text, Button, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 

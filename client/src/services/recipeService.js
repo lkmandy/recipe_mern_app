@@ -1,3 +1,5 @@
+// Service layer for all recipe API calls.
+// Keeps HTTP request logic out of components so pages only call named methods.
 import api from './api';
 
 const recipeService = {

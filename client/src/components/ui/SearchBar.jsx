@@ -1,3 +1,4 @@
+// Controlled search input with a magnifying-glass icon on the left and a clear (×) button that appears when the field has a value.
 import { useState } from 'react';
 import { Input, InputGroup, InputLeftElement, InputRightElement, IconButton } from '@chakra-ui/react';
 import { SearchIcon, CloseIcon } from '@chakra-ui/icons';

@@ -1,3 +1,6 @@
+// Grocery list page. Lets the user generate a shopping list from their saved recipes,
+// toggle items as checked, clear completed items, reset all checks, or print the list.
+// Items are grouped by store section (Produce, Protein, Dairy, Pantry, Other) for easier shopping.
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {

@@ -1,3 +1,4 @@
+// Site footer. Rendered at the bottom of every page via App.jsx.
 import { Box, Text } from '@chakra-ui/react';
 
 export default function Footer() {

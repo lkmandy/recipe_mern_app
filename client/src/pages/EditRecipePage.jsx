@@ -1,3 +1,5 @@
+// Page for editing an existing recipe. Fetches the recipe on mount and redirects non-authors back to /recipes
+// so they cannot modify another user's recipe via a direct URL.
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Box, Heading, useToast } from '@chakra-ui/react';

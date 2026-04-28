@@ -1,3 +1,4 @@
+// Centered loading spinner with an optional text label. Used as a full-section loading state across pages.
 import { Flex, Spinner as ChakraSpinner, Text } from '@chakra-ui/react';
 
 export default function Spinner({ label = 'Loading...' }) {

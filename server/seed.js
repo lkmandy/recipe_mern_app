@@ -1,3 +1,6 @@
+// Database seeding script. Creates a dedicated seed user (NyamaKitchen) and inserts a set of sample recipes
+// covering all supported categories. Run once with `node seed.js` to populate a fresh database.
+// WARNING: clears all existing recipes before inserting — do not run against a production database.
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const Recipe = require("./models/Recipe");

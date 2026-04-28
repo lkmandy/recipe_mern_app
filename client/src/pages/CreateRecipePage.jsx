@@ -1,3 +1,4 @@
+// Page that hosts the new-recipe form. On successful submission it navigates to the newly created recipe's detail page.
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Heading, useToast } from '@chakra-ui/react';
